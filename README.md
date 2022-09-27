@@ -8,6 +8,25 @@
 * https://therichpost.com/angular-9-material-datatable-open-material-dialog-on-row-button-click-event-functionality/
 
 
+### The mat-header-row component and the matHeaderRowDef directive
+
+This combination of related component / directive works in the following way:
+
+    the matHeaderRowDef identifies a configuration element for the table header row, but it does not apply any styling to the element
+    The mat-header-row on the other hand applies some minimal Material stying
+
+The matHeaderRowDef directive also defines in which order the columns should be displayed. In our case, the directive expression is pointing to a component variable named displayedColumns.
+
+Here is what the displayedColumns component variable will look like:
+
+displayedColumns = ["seqNo", "description", "duration"];
+view raw
+04.ts hosted with ❤ by GitHub
+
+The values of this array are the column keys, which need to be identical to the names of the ng-container column sections (specified via the matColumnDef directive).
+
+    Note: It's this array that determines the visual order of the columns!
+
 ### The mat-row component and the matRowDef directive
 
 This component / directive pair also works in a similar way to what we have seen in previous cases:
